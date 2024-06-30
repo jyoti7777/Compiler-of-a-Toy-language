@@ -27,3 +27,7 @@ Designed to parse sample CUCU files (`Sample1.cu` and `Sample2.cu` provided in t
    ```bash
    flex cucu.l
    bison -dy cucu.y
+3. **Step 3:** Compile lexer and parser together with
+   ```bash
+   gcc lex.yy.c y.tab.c -o out
+4. **Step 4:** Lexer.txt and Parser.txt are generated as Output files.
