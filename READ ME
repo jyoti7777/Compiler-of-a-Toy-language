@@ -1,0 +1,13 @@
+->The input to the lexer can be Sample1.cu and Sample2.cu (which is commented out ), both are stated in the main function of cucu.y.
+->Some assumptions were made:
+1. Comments are allowed inside a function , conditional loops too.
+2. During function declaration, The paramter list can be just data types or data types with some paramter name, but the whole list will have to follow one pattern of having paramter name or not.
+3. Only boolean operators taken are: '==', '!=', '>','<','<=','=>','||' and '&&'.
+4. Boolean operators are only allowed in the conditions of contional loops i.e. IF-ELSE and WHILE. But the condiotional loop can have expr as conditions.
+5. When '/*' is encounterd i.e. the beginning of a comment , it is matched with the closest '*/', So as to resolve errors like:
+   /*something*/
+   int x=56;
+   /*something1*/
+-Here if '/*'is not matched with the closest '*/' then the whole three lines would become a comment.
+
+->A few Functions are defined: "appendParam()", "printParamList()" and "freeParamList()" to store paramter list of functions during declaration , definition and calling, to print the list along with the function name.
